@@ -101,5 +101,13 @@ public class Main
         Parser parseData = new Parser();
         parseData.parseJsonFile("src/example_data.json");
         parseData.accessPersonPoints();
+
+        Parser frameParser = new Parser();
+        frameParser.parseFrames();
+
+        for(int i = 0; i < 5; i++) {
+            frameParser.accessFramePoints(i);
+        }
+
     }
 }
