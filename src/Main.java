@@ -1,4 +1,6 @@
+import DiffAlgorithm.AlgMath;
 import ParseData.Parser;
+import ParseData.Point;
 
 public class Main
 {
@@ -99,7 +101,7 @@ public class Main
     public static void main(String[] args)
     {
         Parser parseData = new Parser();
-        parseData.parseJsonFile("src/example_data.json");
+        parseData.parseJsonFile("src/messi.json");
         parseData.accessPersonPoints();
 
         Parser frameParser = new Parser();
@@ -109,5 +111,18 @@ public class Main
             frameParser.accessFramePoints(i);
         }
 
+//        AlgMath a = new AlgMath();
+//        Point x = new Point();
+//        Point y = new Point();
+//        Point z = new Point();
+//
+//        x.x = 1;
+//        x.y = 0;
+//        y.x = 0;
+//        y.y = 0;
+//        z.x = -1;
+//        z.y = -2;
+//
+//        System.out.println(a.getAngle(x,y,z));
     }
 }
