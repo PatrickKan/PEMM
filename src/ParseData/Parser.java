@@ -1,8 +1,12 @@
+package ParseData;
+
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.List;
+
 
 public class Parser
 {
@@ -19,7 +23,8 @@ public class Parser
         container = gson.fromJson(jsonContent, PersonContainer.class);
     }
 
-    public void parseJsonFile(String fileName) {
+    public void parseJsonFile(String fileName)
+    {
         Gson gson = new Gson();
         try
         {
@@ -34,12 +39,14 @@ public class Parser
 
     }
 
-    public void accessPersonPoints() {
+    public void accessPersonPoints()
+    {
         Person p = container.getPerson(0);
-        System.out.println("First pose point is: " + p.getPosePoint(0));
+        List<Float> posePoints = p.getPosePoints();
+        System.out.println("First pose point is: " + posePoints.get(0));
+
+        for(float num: posePoints) {
+            System.out.println("Pose Point: " + num);
+        }
     }
-
-
-
-
 }
