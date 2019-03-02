@@ -97,7 +97,7 @@ public class Main
     public static void main(String[] args)
     {
         Parser parseData = new Parser();
-        parseData.parseJson(exampleJson);
+        parseData.parseJsonFile("src/example_data.json");
         parseData.accessPersonPoints();
     }
 }
