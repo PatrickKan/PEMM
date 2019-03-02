@@ -20,4 +20,15 @@ public class Person
     {
         return pose_keypoints_2d;
     }
+
+    public List<Point> createPoints() {
+        List<Point> points = new ArrayList<Point>();
+        for(int i = 0; i < pose_keypoints_2d.size(); i += 3) {
+            Point currPoint = new Point(i/3);
+            currPoint.x = pose_keypoints_2d.get(i);
+            currPoint.y = pose_keypoints_2d.get(i+1);
+            points.add(currPoint);
+        }
+        return points;
+    }
 }

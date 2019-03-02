@@ -43,10 +43,15 @@ public class Parser
     {
         Person p = container.getPerson(0);
         List<Float> posePoints = p.getPosePoints();
-        System.out.println("First pose point is: " + posePoints.get(0));
 
-        for(float num: posePoints) {
-            System.out.println("Pose Point: " + num);
+        List<Point> points = p.createPoints();
+//
+//        for(float num: posePoints) {
+//            System.out.println("Pose Point: " + num);
+//        }
+//
+        for(Point point: points) {
+            System.out.println("Point " + point.num + ": (" + point.x + ", " + point.y + ")");
         }
     }
 }
