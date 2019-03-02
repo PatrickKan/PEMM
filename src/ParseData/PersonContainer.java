@@ -17,4 +17,9 @@ public class PersonContainer
         return people.get(index);
     }
 
+    public List<Point> getPointsFromPerson(int index)
+    {
+        return getPerson(index).createPoints();
+    }
+
 }

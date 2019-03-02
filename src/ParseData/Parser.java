@@ -39,19 +39,17 @@ public class Parser
 
     }
 
-    public void accessPersonPoints()
+    public List<Point> accessPersonPoints()
     {
         Person p = container.getPerson(0);
         List<Float> posePoints = p.getPosePoints();
 
         List<Point> points = p.createPoints();
-//
-//        for(float num: posePoints) {
-//            System.out.println("Pose Point: " + num);
-//        }
-//
-        for(Point point: points) {
+
+        for(Point point: points)
+        {
             System.out.println("Point " + point.num + ": (" + point.x + ", " + point.y + ")");
         }
+        return points;
     }
 }

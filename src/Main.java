@@ -1,4 +1,7 @@
 import ParseData.Parser;
+import ParseData.Point;
+
+import java.util.List;
 
 public class Main
 {
@@ -100,6 +103,8 @@ public class Main
     {
         Parser parseData = new Parser();
         parseData.parseJsonFile("src/example_data.json");
-        parseData.accessPersonPoints();
+        List<Point> points = parseData.accessPersonPoints();
+
+        GUIFrame gui = new GUIFrame(points);
     }
 }
