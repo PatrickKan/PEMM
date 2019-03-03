@@ -119,6 +119,6 @@ public class Main
         fm.trainModel();
         fm.setAverageAngles();
 
-        DecisionMaker.compareWithModel(frameParser.getListAngles(), fm.getFrameAngles());
+        DecisionMaker.compareWithModel(fm.getFrameAngles(), frameParser.getListAngles());
     }
 }
