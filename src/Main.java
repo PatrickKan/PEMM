@@ -1,4 +1,5 @@
 import DiffAlgorithm.AlgMath;
+import DiffAlgorithm.FootballModel;
 import ParseData.Parser;
 import ParseData.Point;
 
@@ -110,5 +111,9 @@ public class Main
         for(int i = 0; i < 5; i++) {
             frameParser.accessFramePoints(i);
         }
+
+        FootballModel fm = new FootballModel();
+        fm.trainModel();
+        fm.setAverageAngles();
     }
 }
