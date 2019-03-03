@@ -1,0 +1,3 @@
+Nice form! You could improve by straightening your front leg.
+Your left leg angle: 141 degrees 
+Expected angle: 159 degrees

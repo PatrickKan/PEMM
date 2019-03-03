@@ -1,0 +1,3 @@
+Nice form! You could improve by keeping your left leg straighter during the throw.
+Your left leg angle: 149 degrees 
+Expected angle: 151 degrees
