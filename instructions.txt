@@ -1,0 +1,21 @@
+Instructions!
+
+Setting up Files in the Correct Location
+1. Download latest release from OpenPose at
+https://github.com/CMU-Perceptual-Computing-Lab/openpose/releases
+2. Place openpose-x.x.x-win64-cpu-binaries in desired directory.
+3. Rename openpose folder to openpose and locate the Place In Root
+folder.
+4. Place json_converter.bat in the openpose folder
+5. Place video_split.py in the parent directory of openpose
+6. Done!
+
+Running Program with a Video
+1. Place desired video (.mp4) in the same folder as video_split.py
+and rename to input.mp4.
+2. Enter openpose folder and run json_converter.bat
+
+Running Program without Video
+1. Place desired in images to be processed in output_images folder
+2. Run json_converter.bat
+3. Ignore errors and wait for program to finish

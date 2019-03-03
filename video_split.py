@@ -19,7 +19,7 @@ def frameCapture():
     #fps = vid.get(cv2.CAP_PROP_FPS)
     frameCount = int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
     print(frameCount)
-    skip = int(frameCount/5)
+    skip = int(frameCount/4)
     count = 0
     success = 1
     while (success) :
