@@ -1,4 +1,5 @@
 import DiffAlgorithm.AlgMath;
+import DiffAlgorithm.DecisionMaker;
 import DiffAlgorithm.FootballModel;
 import ParseData.Parser;
 import ParseData.Point;
@@ -112,8 +113,12 @@ public class Main
             frameParser.accessFramePoints(i);
         }
 
+        frameParser.intializeAngles();
+
         FootballModel fm = new FootballModel();
         fm.trainModel();
         fm.setAverageAngles();
+
+        DecisionMaker.compareWithModel(frameParser.getListAngles(), fm.getFrameAngles());
     }
 }

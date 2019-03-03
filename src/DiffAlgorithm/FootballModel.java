@@ -56,7 +56,7 @@ public class FootballModel
                 {
                     PersonContainer currContainer;
                     String fileName = "[" + i + "]FootballReference" + j + "_keypoints.json";
-                    FileReader readFile = new FileReader("src/Data/" + fileName);
+                    FileReader readFile = new FileReader("src/Data/Training/" + fileName);
                     JsonReader reader = new JsonReader(readFile);
                     currContainer = gson.fromJson(reader, PersonContainer.class);
                     containers.add(currContainer);
@@ -111,7 +111,7 @@ public class FootballModel
     }
 
     //Train for frame one
-    public void frameOne(List<Point> points)
+    private void frameOne(List<Point> points)
     {
         //Holding ball initially
 
@@ -119,16 +119,12 @@ public class FootballModel
         double angle = AlgMath.getAngle(points.get(5), points.get(6), points.get(7));
         frame1.set(0, frame1.get(0) + angle);
 
-        System.out.println("ANGLE IS:" + angle);
-
         //3 angle with 2 and 4
         angle = AlgMath.getAngle(points.get(2), points.get(3), points.get(4));
         frame1.set(1, frame1.get(1) + angle);
-
-
-        System.out.println("ANGLE IS:" + angle);
     }
-    public void frameTwo(List<Point> points)
+
+    private void frameTwo(List<Point> points)
     {
         double angle = AlgMath.getAngle(points.get(2), points.get(3), points.get(4));
         frame2.set(0, frame2.get(0) + angle);
@@ -140,7 +136,7 @@ public class FootballModel
         //REMOVED: 6 angle with 5 and 7 (slight bend, close to 180 degrees)
         //Left leg planted 12, 13(center), 14
     }
-    public void frameThree(List<Point> points)
+    private void frameThree(List<Point> points)
     {
         double angle = AlgMath.getAngle(points.get(2), points.get(3), points.get(4));
         frame3.set(0, frame3.get(0) + angle);
@@ -155,7 +151,7 @@ public class FootballModel
         //12, 13, 14 (left leg)
 
     }
-    public void frameFour(List<Point> points)
+    private void frameFour(List<Point> points)
     {
         double angle = AlgMath.getAngle(points.get(2), points.get(3), points.get(4));
         frame4.set(0, frame4.get(0) + angle);
@@ -166,7 +162,7 @@ public class FootballModel
         //Right hand, angle with 2, 3 and 4 is close to straight
         //9 should be about 180 degrees with 2
     }
-    public void frameFive(List<Point> points)
+    private void frameFive(List<Point> points)
     {
         double angle = AlgMath.getAngle(points.get(3), points.get(2), points.get(9));
         frame5.set(0, frame5.get(0) + angle);
@@ -183,12 +179,21 @@ public class FootballModel
            frame4.set(i, frame4.get(i)/NUM_TRAINING_DATA);
            frame5.set(i, frame5.get(i)/NUM_TRAINING_DATA);
         }
-        System.out.println(frame1);
-        System.out.println(frame2);
-        System.out.println(frame3);
-        System.out.println(frame4);
-        System.out.println(frame5);
     }
 
     //TODO: Actual - Expected for  diff
+
+    public List<List<Double>> getFrameAngles()
+    {
+        List<List<Double>> frameList = new ArrayList<>();
+
+        frameList.add(frame1);
+        frameList.add(frame2);
+        frameList.add(frame3);
+        frameList.add(frame4);
+        frameList.add(frame5);
+
+        return frameList;
+    }
 }
+
