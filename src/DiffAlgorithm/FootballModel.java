@@ -133,14 +133,11 @@ public class FootballModel
         double angle = AlgMath.getAngle(points.get(2), points.get(3), points.get(4));
         frame2.set(0, frame2.get(0) + angle);
 
-        angle = AlgMath.getAngle(points.get(5), points.get(6), points.get(7));
+        angle = AlgMath.getAngle(points.get(12), points.get(13), points.get(14));
         frame2.set(1, frame2.get(1) + angle);
 
-        angle = AlgMath.getAngle(points.get(12), points.get(13), points.get(13));
-        frame2.set(2, frame2.get(2) + angle);
-
         //3 is at 90ish degree angle with 2 and 4
-        //6 angle with 5 and 7 (slight bend, close to 180 degrees)
+        //REMOVED: 6 angle with 5 and 7 (slight bend, close to 180 degrees)
         //Left leg planted 12, 13(center), 14
     }
     public void frameThree(List<Point> points)
