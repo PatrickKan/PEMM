@@ -71,14 +71,10 @@ public class DecisionMaker {
 
         frameCount++;
 
-        if(frameCount % 5==0) {
-            fileNum++;
-        }
-
         FileWriter fw;
         try {
             //Example of file name format is  1_decision_0_num_1
-            String fileName = frameNum + "_decision_" + fileNum + "_num_";
+            String fileName = frameNum + "_decision_";
             if(t1.length() > 0)
             {
                 fw = new FileWriter(new File("src/Data/",fileName + 1));
